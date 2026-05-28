@@ -1,10 +1,10 @@
-AI Meeting Copilot – iOS App
+# AI Meeting Copilot – iOS App
 
 AI Meeting Copilot iOS is a SwiftUI-based mobile application that enables users to record meetings, upload audio to an AI-powered backend, receive structured summaries, and interact with meeting content using contextual AI chat powered by Generative AI and Retrieval-Augmented Generation (RAG) workflows.
 
 The app is designed using clean MVVM architecture, modular services, reusable UI components, async/await concurrency, and production-style backend integration.
 
-Project Overview
+# Project Overview
 
 The iOS application acts as the frontend client for the AI Meeting Copilot platform.
 
@@ -22,18 +22,21 @@ State-driven UI updates
 
 The application communicates with a FastAPI backend deployed in cloud infrastructure.
 
-Core Features
-1. Audio Recording
+# Core Features
+
+## 1. Audio Recording
 
 Users can record meeting conversations directly from the iOS application.
 
-Capabilities
+## Capabilities
+
 Microphone permission handling
 Start recording
 Stop recording
 Local temporary audio file generation
 Upload-ready audio preparation
-2. Upload Audio to AI Backend
+
+## 2. Upload Audio to AI Backend
 
 Recorded audio is uploaded to the backend API.
 
@@ -46,7 +49,7 @@ Key decision extraction
 
 The application then renders structured meeting insights.
 
-3. AI Meeting Summary
+## 3. AI Meeting Summary
 
 After processing, users receive:
 
@@ -57,7 +60,7 @@ Key decisions
 
 This converts raw meeting conversations into structured business insights.
 
-4. Ask AI (Meeting Chat)
+## 4. Ask AI (Meeting Chat)
 
 Users can ask contextual questions based on meeting content.
 
@@ -69,17 +72,17 @@ Were blockers identified?
 
 The app integrates with backend Generative AI and Retrieval-Augmented Generation (RAG) services for contextual AI-powered responses.
 
-5. Meeting State Persistence
+## 5. Meeting State Persistence
 
 The application stores local meeting context for smoother user experience.
 
-Used for:
-
+Used For
 Current meeting tracking
 Last uploaded meeting
 Chat continuity
 Navigation state persistence
-6. Error Handling
+
+## 6. Error Handling
 
 Implemented for:
 
@@ -92,44 +95,66 @@ Permission denial
 
 This improves application reliability and user experience.
 
-7. Clean Modular UI
+## 7. Clean Modular UI
 
 Views are separated into reusable components for maintainability.
 
-Includes:
+## Includes
 
-Dashboard
-Recording
-Processing
-Summary
-Chat
-Reusable cards
-Tech Stack
-Language
-Swift 5
-UI Framework
-SwiftUI
-Architecture
-MVVM (Model View ViewModel)
-Networking
-URLSession
-REST API Integration
-AI Integration
-Generative AI
-Retrieval-Augmented Generation (RAG)
-Contextual AI Chat
-Semantic Retrieval Workflows
-Storage
-AppStorage
-Local persistence
-Audio
-AVFoundation
-Concurrency
-Async/Await
-Testing
-XCTest
-MockURLProtocol
-Architecture Flow
+* Dashboard
+* Recording
+* Processing
+* Summary
+* Chat
+* Reusable cards
+  
+# Tech Stack
+
+## Language
+
+* Swift 5
+  
+## UI Framework
+
+* SwiftUI
+  
+## Architecture
+
+* MVVM (Model View ViewModel)
+  
+## Networking
+
+* URLSession
+* REST API Integration
+  
+## AI Integration
+
+* Generative AI
+* Retrieval-Augmented Generation (RAG)
+* Contextual AI Chat
+* Semantic Retrieval Workflows
+  
+## Storage
+
+** AppStorage
+** Local persistence
+
+## Audio
+
+* AVFoundation
+  
+## Concurrency
+
+* Async/Await
+  
+## Testing
+
+* XCTest
+* MockURLProtocol
+
+# Architecture Flow
+
+```text
 User
    ↓
 SwiftUI View
@@ -147,8 +172,13 @@ AI Processing
 Response Mapping
    ↓
 UI Rendering
-Key Functional Flow
-Meeting Upload Flow
+```
+
+# Key Functional Flow
+
+# Meeting Upload Flow
+
+```text
 Record Audio
    ↓
 Save Local File
@@ -166,7 +196,11 @@ Action Items
 Key Decisions
    ↓
 Display in UI
-Ask AI Flow
+```
+
+## Ask AI Flow
+
+```text
 Meeting Selected
    ↓
 User Question
@@ -176,45 +210,53 @@ POST /chat
 AI Answer
    ↓
 Chat Rendering
-Major Screens
-Dashboard
+```
+# Major Screens
+
+## Dashboard
 
 Main landing screen.
 
-Provides access to:
+## Provides Access To
 
-Record Meeting
-Upload Flow
-Ask AI
-Meeting Summary
-Recording Screen
+* Record Meeting
+* Upload Flow
+* Ask AI
+* Meeting Summary
+  
+## Recording Screen
 
-Handles:
+## Handles
 
-Microphone permission request
-Start recording
-Stop recording
-Recording state management
-Processing Screen
+* Microphone permission request
+* Start recording
+* Stop recording
+* Recording state management
+  
+## Processing Screen
 
-Displays:
+## Displays
 
-Upload progress
-AI processing state
-Loading feedback
-Summary Screen
+* Upload progress
+* AI processing state
+* Loading feedback
+  
+## Summary Screen
 
-Displays:
+## Displays
 
-Transcript
-Summary
-Action items
-Key decisions
-Ask AI Screen
+* Transcript
+* Summary
+* Action items
+* Key decisions
+  
+## Ask AI Screen
 
 Provides chat-based interaction for contextual meeting understanding.
 
-Project Structure
+# Project Structure
+
+```text
 AIMeetingCopilot/
 │
 ├── Models/
@@ -244,67 +286,80 @@ AIMeetingCopilot/
 │   └── AppError.swift
 │
 └── AIMeetingCopilotApp.swift
-Important Components
-APIService
+```
+# Important Components
 
-Responsible for:
+## APIService
 
-Generic backend API communication
-Response decoding
-Error handling
-UploadService
+## Responsible For
 
-Responsible for:
+* Generic backend API communication
+* Response decoding
+* Error handling
+  
+## UploadService
 
-Multipart upload
-Audio file submission
-Upload response mapping
-AudioRecorderService
+## Responsible For
 
-Handles:
+* Multipart upload
+* Audio file submission
+* Upload response mapping
+  
+## AudioRecorderService
 
-AVFoundation recording
-File generation
-Recorder lifecycle management
-MeetingViewModel
+## Handles
 
-Manages:
+* AVFoundation recording
+* File generation
+* Recorder lifecycle management
+  
+## MeetingViewModel
 
-Upload state
-Summary state
-Meeting data
-Chat interaction
-RecordingViewModel
+## Manages
 
-Controls:
+* Upload state
+* Summary state
+* Meeting data
+* Chat interaction
+  
+## RecordingViewModel
 
-Recording lifecycle
-Permission handling
-UI state updates
-Testing
+## Controls
+
+* Recording lifecycle
+* Permission handling
+* UI state updates
+
+# Testing
 
 Unit tests implemented for:
 
-API service
-Upload service
-Recording logic
-ViewModels
-Mock networking
-Testing Stack
-XCTest
-MockURLProtocol
+* API service
+* Upload service
+* Recording logic
+* ViewModels
+* Mock networking
+
+# Testing Stack
+
+* XCTest
+* MockURLProtocol
 
 This improves maintainability and reliability.
 
-Build & Run
-Clone Repository
+# Build & Run
+
+## Clone Repository
+
 git clone https://github.com/goutamroy/ai-meeting-copilot-ios.git
-Open in Xcode
+
+## Open in Xcode
 
 Open:
 
 AIMeetingCopilot.xcodeproj
-Run Application
+
+## Run Application
 
 Select:
 
@@ -314,62 +369,68 @@ Physical Device
 Then:
 
 Build & Run
-Backend Integration
+
+# Backend Integration
 
 Connected with FastAPI backend for:
 
-Upload API
-Meeting retrieval
-Chat API
-Health checks
-Backend Repository
+* Upload API
+* Meeting retrieval
+* Chat API
+* Health checks
+
+## Backend Repository
 
 https://github.com/goutamroy/ai-meeting-copilot
 
-Backend Deployment
+## Backend Deployment
 
 http://ai-meeting-copilot-env.eba-4m9cjwwy.eu-north-1.elasticbeanstalk.com
 
-AI Workflow Highlights
-Contextual AI-powered meeting chat
-RAG-enabled conversational workflows
-Structured meeting intelligence rendering
-Backend-integrated semantic retrieval
-Async AI processing workflows
-Engineering Practices
+# AI Workflow Highlights
+
+* Contextual AI-powered meeting chat
+* RAG-enabled conversational workflows
+* Structured meeting intelligence rendering
+* Backend-integrated semantic retrieval
+* Async AI processing workflows
+
+# Engineering Practices
 
 Implemented:
 
-MVVM separation
-Reusable components
-Service abstraction
-Structured models
-State-driven SwiftUI
-Error-first handling
-Clean navigation
-Testable architecture
-Use Cases
+* MVVM separation
+* Reusable components
+* Service abstraction
+* Structured models
+* State-driven SwiftUI
+* Error-first handling
+* Clean navigation
+* Testable architecture
+
+# Use Cases
 
 This application can be extended for:
 
-AI meeting assistants
-Voice notes summarization
-Productivity applications
-Team collaboration tools
-Enterprise meeting intelligence
-Interview demonstration projects
-Future Enhancements
+* AI meeting assistants
+* Voice notes summarization
+* Productivity applications
+* Team collaboration tools
+* Enterprise meeting intelligence
+* Interview demonstration projects
+
+# Future Enhancements
 
 Planned improvements:
 
-Authentication
-Offline support
-Multi-meeting chat
-Search across meetings
-Dark mode refinements
-Real-time transcription
-Push notifications
-iPad optimization
+* Authentication
+* Offline support
+* Multi-meeting chat
+* Search across meetings
+* Dark mode refinements
+* Real-time transcription
+* Push notifications
+* iPad optimization
 
 # App Screenshots
 
@@ -399,16 +460,16 @@ iPad optimization
 
 ---
 
-Author
+# Author
 
 Goutam Roy
 
 Senior iOS Engineer | SwiftUI | MVVM | Mobile Architecture | AI/ML Integration | Cloud-Connected Applications
 
-About
+# About
 
 AI-powered Meeting Copilot iOS app built with SwiftUI, MVVM, AVFoundation, async/await, multipart uploads, FastAPI backend integration, and contextual Generative AI + RAG workflows.
 
-Topics
+# Topics
 
 swift swiftui ios generative-ai rag mvvm avfoundation async-await mobile-app ai fastapi
