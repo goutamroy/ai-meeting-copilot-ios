@@ -16,13 +16,13 @@ final class MockURLProtocol: URLProtocol {
     override class func canInit(
         with request: URLRequest
     ) -> Bool {
-        true
+        return true
     }
     
     override class func canonicalRequest(
         for request: URLRequest
     ) -> URLRequest {
-        request
+        return request
     }
     
     override func startLoading() {
@@ -35,9 +35,7 @@ final class MockURLProtocol: URLProtocol {
             return
         }
         
-        if let response =
-            Self.mockResponse {
-            
+        if let response = Self.mockResponse {
             client?.urlProtocol(
                 self,
                 didReceive: response,
@@ -45,9 +43,7 @@ final class MockURLProtocol: URLProtocol {
             )
         }
         
-        if let data =
-            Self.mockData {
-            
+        if let data = Self.mockData {
             client?.urlProtocol(
                 self,
                 didLoad: data

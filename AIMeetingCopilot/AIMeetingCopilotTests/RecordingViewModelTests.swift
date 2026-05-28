@@ -9,17 +9,32 @@ import XCTest
 @testable import AIMeetingCopilot
 
 @MainActor
-final class RecordingViewModelTests:
-    XCTestCase {
+final class RecordingViewModelTests: XCTestCase {
     
     func testInitialState() {
         
-        let viewModel =
-        RecordingViewModel()
+        let viewModel = RecordingViewModel()
         
         XCTAssertNil(
             viewModel.uploadResponse
         )
+        
+        XCTAssertFalse(
+            viewModel.isUploading
+        )
+    }
+    
+    func testUploadStateChanges() {
+        
+        let viewModel = RecordingViewModel()
+        
+        viewModel.isUploading = true
+        
+        XCTAssertTrue(
+            viewModel.isUploading
+        )
+        
+        viewModel.isUploading = false
         
         XCTAssertFalse(
             viewModel.isUploading

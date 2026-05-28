@@ -17,18 +17,17 @@ final class UploadServiceTests: XCTestCase {
         {
             "message": "uploaded successfully",
             "blob_url": "test_url",
-            "meeting_id": "123",
+            "meeting_id": 123,
             "transcript": "test transcript",
-            "summary": "test summary"
+            "summary": "test summary",
+            "action_items": ["Task 1"],
+            "key_decisions": ["Decision 1"]
         }
         """
         
-        guard let data = json.data(
-            using: .utf8
-        ) else {
-            XCTFail("Failed to create test data")
-            return
-        }
+        let data = try XCTUnwrap(
+            json.data(using: .utf8)
+        )
         
         let response = try JSONDecoder().decode(
             UploadResponse.self,
@@ -42,7 +41,27 @@ final class UploadServiceTests: XCTestCase {
         
         XCTAssertEqual(
             response.meeting_id,
-            "123"
+            123
+        )
+        
+        XCTAssertEqual(
+            response.transcript,
+            "test transcript"
+        )
+        
+        XCTAssertEqual(
+            response.summary,
+            "test summary"
+        )
+        
+        XCTAssertEqual(
+            response.action_items?.first as? String,
+            "Task 1"
+        )
+        
+        XCTAssertEqual(
+            response.key_decisions?.first as? String,
+            "Decision 1"
         )
     }
 }

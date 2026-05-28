@@ -19,12 +19,9 @@ final class APIServiceTests: XCTestCase {
         }
         """
         
-        guard let data = json.data(
-            using: .utf8
-        ) else {
-            XCTFail("Failed to create test data")
-            return
-        }
+        let data = try XCTUnwrap(
+            json.data(using: .utf8)
+        )
         
         let response = try JSONDecoder().decode(
             ChatResponse.self,
@@ -34,6 +31,27 @@ final class APIServiceTests: XCTestCase {
         XCTAssertEqual(
             response.answer,
             "Meeting was completed successfully"
+        )
+    }
+    
+    func testChatRequestEncoding() throws {
+        
+        let request = ChatRequest(
+            question: "What was discussed?"
+        )
+        
+        let data = try JSONEncoder().encode(
+            request
+        )
+        
+        let decoded = try JSONDecoder().decode(
+            ChatRequest.self,
+            from: data
+        )
+        
+        XCTAssertEqual(
+            decoded.question,
+            "What was discussed?"
         )
     }
 }
