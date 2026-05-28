@@ -30,11 +30,11 @@ Users can record meeting conversations directly from the iOS application.
 
 ## Capabilities
 
-Microphone permission handling
-Start recording
-Stop recording
-Local temporary audio file generation
-Upload-ready audio preparation
+* Microphone permission handling
+* Start recording
+* Stop recording
+* Local temporary audio file generation
+* Upload-ready audio preparation
 
 ## 2. Upload Audio to AI Backend
 
@@ -42,10 +42,10 @@ Recorded audio is uploaded to the backend API.
 
 The backend processes:
 
-Speech-to-text transcription
-AI summarization
-Action item extraction
-Key decision extraction
+* Speech-to-text transcription
+* AI summarization
+* Action item extraction
+* Key decision extraction
 
 The application then renders structured meeting insights.
 
@@ -53,10 +53,10 @@ The application then renders structured meeting insights.
 
 After processing, users receive:
 
-Transcript
-Summary
-Action items
-Key decisions
+* Transcript
+* Summary
+* Action items
+* Key decisions
 
 This converts raw meeting conversations into structured business insights.
 
