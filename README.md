@@ -136,8 +136,8 @@ Views are separated into reusable components for maintainability.
   
 ## Storage
 
-** AppStorage
-** Local persistence
+* AppStorage
+* Local persistence
 
 ## Audio
 
