@@ -1,4 +1,4 @@
-#AI Meeting Copilot – iOS App
+AI Meeting Copilot – iOS App
 
 AI Meeting Copilot iOS is a SwiftUI-based mobile application that enables users to record meetings, upload audio to an AI-powered backend, receive structured summaries, and interact with meeting content using contextual AI chat powered by Generative AI and Retrieval-Augmented Generation (RAG) workflows.
 
@@ -22,7 +22,7 @@ State-driven UI updates
 
 The application communicates with a FastAPI backend deployed in cloud infrastructure.
 
-#Core Features
+Core Features
 1. Audio Recording
 
 Users can record meeting conversations directly from the iOS application.
@@ -61,7 +61,7 @@ This converts raw meeting conversations into structured business insights.
 
 Users can ask contextual questions based on meeting content.
 
-Example questions
+Example Questions
 What was discussed?
 What decisions were made?
 What are the next steps?
@@ -370,7 +370,6 @@ Dark mode refinements
 Real-time transcription
 Push notifications
 iPad optimization
----
 
 # App Screenshots
 
