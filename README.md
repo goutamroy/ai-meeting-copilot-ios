@@ -10,15 +10,15 @@ The iOS application acts as the frontend client for the AI Meeting Copilot platf
 
 It handles:
 
-Audio recording
-Microphone permission handling
-File upload to backend
-Meeting summary visualization
-AI chat interaction
-Meeting history access
-Persistent local meeting context
-Error handling
-State-driven UI updates
+* Audio recording
+* Microphone permission handling
+* File upload to backend
+* Meeting summary visualization
+* AI chat interaction
+* Meeting history access
+* Persistent local meeting context
+* Error handling
+* State-driven UI updates
 
 The application communicates with a FastAPI backend deployed in cloud infrastructure.
 
@@ -64,11 +64,12 @@ This converts raw meeting conversations into structured business insights.
 
 Users can ask contextual questions based on meeting content.
 
-Example Questions
-What was discussed?
-What decisions were made?
-What are the next steps?
-Were blockers identified?
+## Example Questions
+
+* What was discussed?
+* What decisions were made?
+* What are the next steps?
+* Were blockers identified?
 
 The app integrates with backend Generative AI and Retrieval-Augmented Generation (RAG) services for contextual AI-powered responses.
 
@@ -76,22 +77,23 @@ The app integrates with backend Generative AI and Retrieval-Augmented Generation
 
 The application stores local meeting context for smoother user experience.
 
-Used For
-Current meeting tracking
-Last uploaded meeting
-Chat continuity
-Navigation state persistence
+## Used For
+
+* Current meeting tracking
+* Last uploaded meeting
+* Chat continuity
+* Navigation state persistence
 
 ## 6. Error Handling
 
 Implemented for:
 
-Upload failures
-Missing data
-Invalid responses
-API failures
-Network issues
-Permission denial
+* Upload failures
+* Missing data
+* Invalid responses
+* API failures
+* Network issues
+* Permission denial
 
 This improves application reliability and user experience.
 
